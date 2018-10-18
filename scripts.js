@@ -10,32 +10,34 @@
 const fragment = document.createDocumentFragment()
 
 
-// building the messages and adding to the fragment
-const section1 = document.createElement("section")
-section1.className = "message"
-section1.textContent = "hey ya'll"
-fragment.appendChild(section1);
+// function to build messages
 
-const section2 = document.createElement("section")
-section2.className = "message"
-section2.textContent = "chicken monkey"
-fragment.appendChild(section2);
+const buildMessageSection = (content) => {
+  let messageSection = document.createElement("section")
+  messageSection.className = "message"
+  messageSection.textContent = content
+  return messageSection
+}
 
-const section3 = document.createElement("section")
-section3.className = "message"
-section3.textContent = "more chat"
-fragment.appendChild(section3);
+// calling the function to build the messages and then appending them to fragment
 
-const section4 = document.createElement("section")
-section4.className = "message"
-section4.textContent = "hmmmmmm"
-fragment.appendChild(section4);
+const section1 = buildMessageSection("hey ya'll")
+fragment.appendChild(section1)
 
-const section5 = document.createElement("section")
-section5.className = "message"
-section5.textContent = "wow"
-fragment.appendChild(section5);
+const section2 = buildMessageSection("chicken monkey")
+fragment.appendChild(section2)
 
-// appending the fragment
+const section3 = buildMessageSection("more chat")
+fragment.appendChild(section3)
+
+const section4 = buildMessageSection("hmmm")
+fragment.appendChild(section4)
+
+const section5 = buildMessageSection("wow")
+fragment.appendChild(section5)
+
+
+
+// // appending the fragment
 const messages = document.querySelector("#messages")
 messages.appendChild(fragment)
