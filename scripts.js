@@ -19,22 +19,25 @@ const buildMessageSection = (content) => {
   return messageSection
 }
 
-// calling the function to build the messages and then appending them to fragment
+// function to build messages and append to the fragment. calling the message builder function within
+const addMessageSection = (content) => {
+  let messageSection = buildMessageSection(content)
+  fragment.appendChild(messageSection)
+  return messageSection
+}
 
-const section1 = buildMessageSection("hey ya'll")
-fragment.appendChild(section1)
 
-const section2 = buildMessageSection("chicken monkey")
-fragment.appendChild(section2)
+// calling the function to build and add each of the messages to the fragment
 
-const section3 = buildMessageSection("more chat")
-fragment.appendChild(section3)
+addMessageSection("hey ya'll");
 
-const section4 = buildMessageSection("hmmm")
-fragment.appendChild(section4)
+addMessageSection("chicken monkey")
 
-const section5 = buildMessageSection("wow")
-fragment.appendChild(section5)
+addMessageSection("more chat")
+
+addMessageSection("hmmm")
+
+addMessageSection("wow")
 
 
 
